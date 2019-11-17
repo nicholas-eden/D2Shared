@@ -273,7 +273,10 @@ func (v MPQ) ReadFile(fileName string) ([]byte, error) {
 	}
 	fileBlockData.FileName = strings.ToLower(fileName)
 	fileBlockData.calculateEncryptionSeed()
-	mpqStream := CreateStream(v, fileBlockData, fileName)
+	mpqStream, err := CreateStream(v, fileBlockData, fileName)
+	if err != nil {
+		return []byte{}, err
+	}
 	buffer := make([]byte, fileBlockData.UncompressedFileSize)
 	mpqStream.Read(buffer, 0, fileBlockData.UncompressedFileSize)
 	v.fileCache[fileName] = buffer

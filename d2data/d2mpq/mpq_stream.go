@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"log"
 	"strings"
+	"errors"
 
 	"github.com/OpenDiablo2/D2Shared/d2helper"
 
@@ -29,7 +30,7 @@ type Stream struct {
 }
 
 // CreateStream creates an MPQ stream
-func CreateStream(mpq MPQ, blockTableEntry BlockTableEntry, fileName string) *Stream {
+func CreateStream(mpq MPQ, blockTableEntry BlockTableEntry, fileName string) (*Stream, error) {
 	result := &Stream{
 		MPQData:           mpq,
 		BlockTableEntry:   blockTableEntry,
@@ -46,13 +47,14 @@ func CreateStream(mpq MPQ, blockTableEntry BlockTableEntry, fileName string) *St
 		log.Fatal("Patching is not supported")
 	}
 
+	var err error
 	if (result.BlockTableEntry.HasFlag(FileCompress) || result.BlockTableEntry.HasFlag(FileImplode)) && !result.BlockTableEntry.HasFlag(FileSingleUnit) {
-		result.loadBlockOffsets()
+		err = result.loadBlockOffsets()
 	}
-	return result
+	return result, err
 }
 
-func (v *Stream) loadBlockOffsets() {
+func (v *Stream) loadBlockOffsets() error {
 	blockPositionCount := ((v.BlockTableEntry.UncompressedFileSize + v.BlockSize - 1) / v.BlockSize) + 1
 	v.BlockPositions = make([]uint32, blockPositionCount)
 	v.MPQData.File.Seek(int64(v.BlockTableEntry.FilePosition), 0)
@@ -68,12 +70,15 @@ func (v *Stream) loadBlockOffsets() {
 	if v.BlockTableEntry.HasFlag(FileEncrypted) {
 		decrypt(v.BlockPositions, v.EncryptionSeed-1)
 		if v.BlockPositions[0] != blockPosSize {
-			panic("Decryption of MPQ failed!")
+			log.Println("Decryption of MPQ failed!")
+			return errors.New("Decryption of MPQ failed!")
 		}
 		if v.BlockPositions[1] > v.BlockSize+blockPosSize {
-			panic("Decryption of MPQ failed!")
+			log.Println("Decryption of MPQ failed!")
+			return errors.New("Decryption of MPQ failed!")
 		}
 	}
+	return nil
 }
 
 func (v *Stream) Read(buffer []byte, offset, count uint32) uint32 {
