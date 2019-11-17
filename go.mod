@@ -1,4 +1,4 @@
-module d2shared
+module github.com/OpenDiablo2/D2Shared
 
 go 1.13
 
