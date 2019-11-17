@@ -1,5 +1,7 @@
 package d2helper
 
+import "math"
+
 // Min returns the lower of two values
 func Min(a, b uint32) uint32 {
 	if a < b {
@@ -53,14 +55,32 @@ func BytesToInt32(b []byte) int32 {
 	return int32(uint32(b[0]) | uint32(b[1])<<8 | uint32(b[2])<<16 | uint32(b[3])<<24)
 }
 
+// IsoToScreen converts isometric coordinates to screenspace coordinates
 func IsoToScreen(isoX, isoY, modX, modY int) (int, int) {
 	screenX := (isoX - isoY) * 80
 	screenY := (isoX + isoY) * 40
 	return screenX + modX, screenY + modY
 }
 
+// ScreenToIso converts screenspace coordinates to isometric coordinates
 func ScreenToIso(sx, sy float64) (float64, float64) {
 	x := (sx/80 + sy/40) / 2
 	y := (sy/40 - (sx / 80)) / 2
 	return x, y
+}
+
+// GetAngleBetween returns the angle between two points. 0deg is facing to the right.
+func GetAngleBetween(p1X, p1Y, p2X, p2Y float64) int {
+	deltaY := p1Y - p2Y
+	deltaX := p2X - p1X
+
+	result := math.Atan2(deltaY, deltaX) * (180 / math.Pi)
+	iResult := int(result)
+	for iResult < 0 {
+		iResult += 360
+	}
+	for iResult >= 360 {
+		iResult -= 360
+	}
+	return iResult
 }
