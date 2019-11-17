@@ -3,7 +3,7 @@ package d2dcc
 import (
 	"log"
 
-	"github.com/OpenDiablo2/OpenDiablo2/d2common"
+	"github.com/OpenDiablo2/D2Shared/d2common"
 )
 
 type DCCDirectionFrame struct {

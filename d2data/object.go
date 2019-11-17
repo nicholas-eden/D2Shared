@@ -1,8 +1,8 @@
 package d2data
 
 import (
-	"github.com/OpenDiablo2/OpenDiablo2/d2common"
-	"github.com/OpenDiablo2/OpenDiablo2/d2data/d2datadict"
+	"github.com/OpenDiablo2/D2Shared/d2common"
+	"github.com/OpenDiablo2/D2Shared/d2data/d2datadict"
 )
 
 type Object struct {

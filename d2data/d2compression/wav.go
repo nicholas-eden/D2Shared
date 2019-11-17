@@ -1,7 +1,7 @@
 package d2compression
 
 import (
-	"github.com/OpenDiablo2/OpenDiablo2/d2common"
+	"github.com/OpenDiablo2/D2Shared/d2common"
 )
 
 var sLookup = []int{

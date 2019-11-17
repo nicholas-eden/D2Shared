@@ -3,11 +3,11 @@ package d2datadict
 import (
 	"log"
 
-	"github.com/OpenDiablo2/OpenDiablo2/d2common/d2enum"
+	"github.com/OpenDiablo2/D2Shared/d2common/d2enum"
 
-	"github.com/OpenDiablo2/OpenDiablo2/d2common/d2resource"
+	"github.com/OpenDiablo2/D2Shared/d2common/d2resource"
 
-	"github.com/OpenDiablo2/OpenDiablo2/d2common/d2interface"
+	"github.com/OpenDiablo2/D2Shared/d2common/d2interface"
 )
 
 var Weapons map[string]*ItemCommonRecord

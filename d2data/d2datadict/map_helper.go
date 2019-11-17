@@ -2,7 +2,7 @@ package d2datadict
 
 import (
 	"strings"
-	dh "github.com/OpenDiablo2/OpenDiablo2/d2helper"
+	dh "github.com/OpenDiablo2/D2Shared/d2helper"
 )
 
 func MapHeaders(line string) map[string]int {

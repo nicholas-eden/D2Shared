@@ -4,11 +4,11 @@ import (
 	"log"
 	"strings"
 
-	"github.com/OpenDiablo2/OpenDiablo2/d2common/d2resource"
+	"github.com/OpenDiablo2/D2Shared/d2common/d2resource"
 
-	"github.com/OpenDiablo2/OpenDiablo2/d2common/d2interface"
+	"github.com/OpenDiablo2/D2Shared/d2common/d2interface"
 
-	dh "github.com/OpenDiablo2/OpenDiablo2/d2helper"
+	dh "github.com/OpenDiablo2/D2Shared/d2helper"
 )
 
 type LevelTypeRecord struct {

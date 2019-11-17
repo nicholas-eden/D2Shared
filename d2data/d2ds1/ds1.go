@@ -1,12 +1,12 @@
 package d2ds1
 
 import (
-	"github.com/OpenDiablo2/OpenDiablo2/d2common"
-	"github.com/OpenDiablo2/OpenDiablo2/d2common/d2enum"
-	"github.com/OpenDiablo2/OpenDiablo2/d2common/d2interface"
-	"github.com/OpenDiablo2/OpenDiablo2/d2data"
-	"github.com/OpenDiablo2/OpenDiablo2/d2data/d2datadict"
-	"github.com/OpenDiablo2/OpenDiablo2/d2helper"
+	"github.com/OpenDiablo2/D2Shared/d2common"
+	"github.com/OpenDiablo2/D2Shared/d2common/d2enum"
+	"github.com/OpenDiablo2/D2Shared/d2common/d2interface"
+	"github.com/OpenDiablo2/D2Shared/d2data"
+	"github.com/OpenDiablo2/D2Shared/d2data/d2datadict"
+	"github.com/OpenDiablo2/D2Shared/d2helper"
 )
 
 type DS1 struct {

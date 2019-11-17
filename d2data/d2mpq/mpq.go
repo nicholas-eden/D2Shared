@@ -10,7 +10,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/OpenDiablo2/OpenDiablo2/d2common/d2resource"
+	"github.com/OpenDiablo2/D2Shared/d2common/d2resource"
 )
 
 // MPQ represents an MPQ archive

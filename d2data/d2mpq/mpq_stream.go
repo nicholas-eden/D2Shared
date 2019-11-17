@@ -9,10 +9,10 @@ import (
 	"log"
 	"strings"
 
-	"github.com/OpenDiablo2/OpenDiablo2/d2helper"
+	"github.com/OpenDiablo2/D2Shared/d2helper"
 
 	"github.com/JoshVarga/blast"
-	"github.com/OpenDiablo2/OpenDiablo2/d2data/d2compression"
+	"github.com/OpenDiablo2/D2Shared/d2data/d2compression"
 )
 
 // Stream represents a stream of data in an MPQ archive

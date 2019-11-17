@@ -4,11 +4,11 @@ import (
 	"log"
 	"strings"
 
-	"github.com/OpenDiablo2/OpenDiablo2/d2common/d2resource"
+	"github.com/OpenDiablo2/D2Shared/d2common/d2resource"
 
-	"github.com/OpenDiablo2/OpenDiablo2/d2common/d2interface"
+	"github.com/OpenDiablo2/D2Shared/d2common/d2interface"
 
-	"github.com/OpenDiablo2/OpenDiablo2/d2common"
+	"github.com/OpenDiablo2/D2Shared/d2common"
 )
 
 // AnimationDataRecord represents a single entry in the animation data dictionary file

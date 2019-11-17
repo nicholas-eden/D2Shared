@@ -3,8 +3,8 @@ package d2dcc
 import (
 	"log"
 
-	"github.com/OpenDiablo2/OpenDiablo2/d2common"
-	"github.com/OpenDiablo2/OpenDiablo2/d2helper"
+	"github.com/OpenDiablo2/D2Shared/d2common"
+	"github.com/OpenDiablo2/D2Shared/d2helper"
 )
 
 type DCCDirection struct {

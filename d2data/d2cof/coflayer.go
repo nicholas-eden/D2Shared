@@ -1,6 +1,6 @@
 package d2cof
 
-import "github.com/OpenDiablo2/OpenDiablo2/d2common/d2enum"
+import "github.com/OpenDiablo2/D2Shared/d2common/d2enum"
 
 type CofLayer struct {
 	Type        d2enum.CompositeType

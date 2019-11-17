@@ -3,9 +3,9 @@ package d2dt1
 import (
 	"log"
 
-	"github.com/OpenDiablo2/OpenDiablo2/d2common/d2interface"
+	"github.com/OpenDiablo2/D2Shared/d2common/d2interface"
 
-	"github.com/OpenDiablo2/OpenDiablo2/d2common"
+	"github.com/OpenDiablo2/D2Shared/d2common"
 )
 
 // https://d2mods.info/forum/viewtopic.php?t=65163

@@ -32,7 +32,7 @@ package d2compression
 import (
 	"log"
 
-	"github.com/OpenDiablo2/OpenDiablo2/d2common"
+	"github.com/OpenDiablo2/D2Shared/d2common"
 )
 
 // linkedNode is a node which is both hierachcical (parent/child) and doubly linked (next/prev)
