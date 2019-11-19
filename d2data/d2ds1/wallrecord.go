@@ -9,4 +9,5 @@ type WallRecord struct {
 	MainIndex   byte
 	Unknown2    byte
 	Hidden      bool
+	RandomIndex byte
 }
