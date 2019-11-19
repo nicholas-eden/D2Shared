@@ -1,60 +1,7 @@
 package d2datadict
 
-import (
-	"log"
-)
 
-type ObjectType int
-
-const (
-	ObjectTypeCharacter ObjectType = 1
-	ObjectTypeItem      ObjectType = 2
-)
-
-type ObjectLookupRecord struct {
-	Act           int
-	Type          ObjectType
-	Id            int
-	Description   string
-	ObjectsTxtId  int
-	MonstatsTxtId int
-	Direction     int
-	Base          string
-	Token         string
-	Mode          string
-	Class         string
-	HD            string
-	TR            string
-	LG            string
-	RA            string
-	LA            string
-	RH            string
-	LH            string
-	SH            string
-	S1            string
-	S2            string
-	S3            string
-	S4            string
-	S5            string
-	S6            string
-	S7            string
-	S8            string
-	ColorMap      string
-	Index         int
-}
-
-func LookupObject(act, typ, id int) *ObjectLookupRecord {
-	for _, lookup := range ObjectLookups {
-		if lookup.Act != act || int(lookup.Type) != typ || lookup.Id != id {
-			continue
-		}
-		return &lookup
-	}
-	log.Panicf("Failed to look up object Act: %d, Type: %d, Id: %d", act, typ, id)
-	return nil
-}
-
-var ObjectLookups = []ObjectLookupRecord{
+var objectLookups = []ObjectLookupRecord{
 	{Act: 1, Type: ObjectTypeCharacter, Id: 0, Description: "gheed-ACT 1 TABLE", ObjectsTxtId: -1, MonstatsTxtId: -1, Direction: -1, Base: "/Data/Global/Monsters", Token: "GH", Mode: "NU", Class: "HTH", TR: "LIT", Index: -1},
 	{Act: 1, Type: ObjectTypeCharacter, Id: 1, Description: "cain1-ACT 1 TABLE", ObjectsTxtId: -1, MonstatsTxtId: -1, Direction: -1, Base: "/Data/Global/Monsters", Token: "DC", Mode: "NU", Class: "HTH", TR: "LIT", Index: -1},
 	{Act: 1, Type: ObjectTypeCharacter, Id: 2, Description: "akara-ACT 1 TABLE", ObjectsTxtId: -1, MonstatsTxtId: -1, Direction: -1, Base: "/Data/Global/Monsters", Token: "PS", Mode: "NU", Class: "HTH", TR: "LIT", Index: -1},
@@ -7946,5 +7893,4 @@ var ObjectLookups = []ObjectLookupRecord{
 	{Act: 5, Type: ObjectTypeItem, Id: 720, Description: "Dummy-fire place guy", ObjectsTxtId: -1, MonstatsTxtId: -1, Direction: -1, Base: "/Data/Global/Objects", Token: "7y", Mode: "NU", Class: "HTH", TR: "LIT", Index: -1},
 	{Act: 5, Type: ObjectTypeItem, Id: 721, Description: "Dummy-door blocker", ObjectsTxtId: -1, MonstatsTxtId: -1, Direction: -1, Base: "/Data/Global/Objects", Token: "ss", Index: -1},
 	{Act: 5, Type: ObjectTypeItem, Id: 722, Description: "Dummy-door blocker", ObjectsTxtId: -1, MonstatsTxtId: -1, Direction: -1, Base: "/Data/Global/Objects", Token: "ss", Index: -1},
-	{Act: -1, Type: -1, Id: -1, ObjectsTxtId: -1, MonstatsTxtId: -1, Direction: -1, Index: -1},
 }
