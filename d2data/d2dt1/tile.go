@@ -11,7 +11,7 @@ type Tile struct {
 	MainIndex          int32
 	SubIndex           int32
 	RarityFrameIndex   int32
-	SubTileFlags       [25]byte
+	SubTileFlags       [25]SubTileFlags
 	blockHeaderPointer int32
 	blockHeaderSize    int32
 	Blocks             []Block

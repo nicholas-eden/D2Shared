@@ -49,7 +49,7 @@ func LoadDT1(path string, fileProvider d2interface.FileProvider) DT1 {
 		newTile.RarityFrameIndex = br.GetInt32()
 		br.SkipBytes(4)
 		for i := range newTile.SubTileFlags {
-			newTile.SubTileFlags[i] = br.GetByte()
+			newTile.SubTileFlags[i] = NewSubTileFlags(br.GetByte())
 		}
 		br.SkipBytes(7)
 		newTile.blockHeaderPointer = br.GetInt32()
