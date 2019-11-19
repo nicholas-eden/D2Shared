@@ -4,9 +4,12 @@ import (
 	"bufio"
 	"encoding/binary"
 	"errors"
+	"io/ioutil"
 	"log"
 	"os"
 	"path"
+	"path/filepath"
+	"runtime"
 	"strings"
 	"sync"
 
@@ -109,7 +112,13 @@ func Load(fileName string) (*MPQ, error) {
 		FileName:  fileName,
 		fileCache: make(map[string][]byte),
 	}
-	file, err := os.Open(fileName)
+	var file *os.File
+	var err error
+	if runtime.GOOS == "linux" {
+		file, err = openIgnoreCase(fileName)
+	} else {
+		file, err = os.Open(fileName)
+	}
 	if err != nil {
 		return nil, err
 	}
@@ -120,6 +129,32 @@ func Load(fileName string) (*MPQ, error) {
 	}
 	mpqCache[fileName] = result
 	return result, nil
+}
+
+func openIgnoreCase(mpqPath string) (*os.File, error) {
+	// First see if file exists with specified case
+	mpqFile, err := os.Open(mpqPath)
+	if err == nil {
+		return mpqFile, err
+	}
+
+	mpqName := filepath.Base(mpqPath)
+	mpqDir := filepath.Dir(mpqPath)
+
+	files, err := ioutil.ReadDir(mpqDir)
+	if err != nil {
+		return nil, err
+	}
+
+	for _, file := range files {
+		if strings.EqualFold(file.Name(), mpqName) {
+			mpqName = file.Name()
+			break
+		}
+	}
+
+	file, err := os.Open(path.Join(mpqDir, mpqName))
+	return file, err
 }
 
 func (v *MPQ) readHeader() error {
