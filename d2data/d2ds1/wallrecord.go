@@ -10,4 +10,5 @@ type WallRecord struct {
 	Unknown2    byte
 	Hidden      bool
 	RandomIndex byte
+	YAdjust     int
 }
