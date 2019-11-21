@@ -38,8 +38,7 @@ func LoadDT1(path string, fileProvider d2interface.FileProvider) DT1 {
 		newTile := Tile{}
 		newTile.Direction = br.GetInt32()
 		newTile.RoofHeight = br.GetInt16()
-		newTile.SoundIndex = br.GetByte()
-		newTile.Animated = br.GetByte() == 1
+		newTile.MaterialFlags = br.GetInt16()
 		newTile.Height = br.GetInt32()
 		newTile.Width = br.GetInt32()
 		br.SkipBytes(4)
