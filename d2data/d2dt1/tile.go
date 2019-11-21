@@ -3,8 +3,7 @@ package d2dt1
 type Tile struct {
 	Direction          int32
 	RoofHeight         int16
-	SoundIndex         byte
-	Animated           bool
+	MaterialFlags      int16
 	Height             int32
 	Width              int32
 	Orientation        int32
