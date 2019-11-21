@@ -6,9 +6,9 @@ type Tile struct {
 	MaterialFlags      int16
 	Height             int32
 	Width              int32
-	Orientation        int32
-	MainIndex          int32
-	SubIndex           int32
+	Type               int32
+	Style              int32
+	Sequence           int32
 	RarityFrameIndex   int32
 	SubTileFlags       [25]SubTileFlags
 	blockHeaderPointer int32

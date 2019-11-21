@@ -1,12 +1,12 @@
 package d2ds1
 
 type WallRecord struct {
-	Orientation byte
+	Type        byte
 	Zero        byte
 	Prop1       byte
-	SubIndex    byte
+	Sequence    byte
 	Unknown1    byte
-	MainIndex   byte
+	Style       byte
 	Unknown2    byte
 	Hidden      bool
 	RandomIndex byte

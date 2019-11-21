@@ -42,9 +42,9 @@ func LoadDT1(path string, fileProvider d2interface.FileProvider) DT1 {
 		newTile.Height = br.GetInt32()
 		newTile.Width = br.GetInt32()
 		br.SkipBytes(4)
-		newTile.Orientation = br.GetInt32()
-		newTile.MainIndex = br.GetInt32()
-		newTile.SubIndex = br.GetInt32()
+		newTile.Type = br.GetInt32()
+		newTile.Style = br.GetInt32()
+		newTile.Sequence = br.GetInt32()
 		newTile.RarityFrameIndex = br.GetInt32()
 		br.SkipBytes(4)
 		for i := range newTile.SubTileFlags {
