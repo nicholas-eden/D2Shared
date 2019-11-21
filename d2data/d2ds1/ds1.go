@@ -128,9 +128,9 @@ func LoadDS1(path string, fileProvider d2interface.FileProvider) DS1 {
 				case d2enum.LayerStreamWall4:
 					wallIndex := int(layerStreamType) - int(d2enum.LayerStreamWall1)
 					ds1.Tiles[y][x].Walls[wallIndex].Prop1 = byte(dw & 0x000000FF)
-					ds1.Tiles[y][x].Walls[wallIndex].SubIndex = byte((dw & 0x00003F00) >> 8)
+					ds1.Tiles[y][x].Walls[wallIndex].Sequence = byte((dw & 0x00003F00) >> 8)
 					ds1.Tiles[y][x].Walls[wallIndex].Unknown1 = byte((dw & 0x000FC000) >> 14)
-					ds1.Tiles[y][x].Walls[wallIndex].MainIndex = byte((dw & 0x03F00000) >> 20)
+					ds1.Tiles[y][x].Walls[wallIndex].Style = byte((dw & 0x03F00000) >> 20)
 					ds1.Tiles[y][x].Walls[wallIndex].Unknown2 = byte((dw & 0x7C000000) >> 26)
 					ds1.Tiles[y][x].Walls[wallIndex].Hidden = byte((dw&0x80000000)>>31) > 0
 				case d2enum.LayerStreamOrientation1:
@@ -147,23 +147,23 @@ func LoadDS1(path string, fileProvider d2interface.FileProvider) DS1 {
 							c = dirLookup[c]
 						}
 					}
-					ds1.Tiles[y][x].Walls[wallIndex].Orientation = byte(c)
+					ds1.Tiles[y][x].Walls[wallIndex].Type = byte(c)
 					ds1.Tiles[y][x].Walls[wallIndex].Zero = byte((dw & 0xFFFFFF00) >> 8)
 				case d2enum.LayerStreamFloor1:
 					fallthrough
 				case d2enum.LayerStreamFloor2:
 					floorIndex := int(layerStreamType) - int(d2enum.LayerStreamFloor1)
 					ds1.Tiles[y][x].Floors[floorIndex].Prop1 = byte(dw & 0x000000FF)
-					ds1.Tiles[y][x].Floors[floorIndex].SubIndex = byte((dw & 0x00003F00) >> 8)
+					ds1.Tiles[y][x].Floors[floorIndex].Sequence = byte((dw & 0x00003F00) >> 8)
 					ds1.Tiles[y][x].Floors[floorIndex].Unknown1 = byte((dw & 0x000FC000) >> 14)
-					ds1.Tiles[y][x].Floors[floorIndex].MainIndex = byte((dw & 0x03F00000) >> 20)
+					ds1.Tiles[y][x].Floors[floorIndex].Style = byte((dw & 0x03F00000) >> 20)
 					ds1.Tiles[y][x].Floors[floorIndex].Unknown2 = byte((dw & 0x7C000000) >> 26)
 					ds1.Tiles[y][x].Floors[floorIndex].Hidden = byte((dw&0x80000000)>>31) > 0
 				case d2enum.LayerStreamShadow:
 					ds1.Tiles[y][x].Shadows[0].Prop1 = byte(dw & 0x000000FF)
-					ds1.Tiles[y][x].Shadows[0].SubIndex = byte((dw & 0x00003F00) >> 8)
+					ds1.Tiles[y][x].Shadows[0].Sequence = byte((dw & 0x00003F00) >> 8)
 					ds1.Tiles[y][x].Shadows[0].Unknown1 = byte((dw & 0x000FC000) >> 14)
-					ds1.Tiles[y][x].Shadows[0].MainIndex = byte((dw & 0x03F00000) >> 20)
+					ds1.Tiles[y][x].Shadows[0].Style = byte((dw & 0x03F00000) >> 20)
 					ds1.Tiles[y][x].Shadows[0].Unknown2 = byte((dw & 0x7C000000) >> 26)
 					ds1.Tiles[y][x].Shadows[0].Hidden = byte((dw&0x80000000)>>31) > 0
 				case d2enum.LayerStreamSubstitute:
