@@ -1,9 +1,9 @@
 package d2enum
 
-type TileType int32
+type TileType byte
 
 const (
-	Floors                                         TileType = 0
+	Floor                                          TileType = 0
 	LeftWall                                       TileType = 1
 	RightWall                                      TileType = 2
 	RightPartOfNorthCornerWall                     TileType = 3
@@ -16,9 +16,9 @@ const (
 	SpecialTile1                                   TileType = 10
 	SpecialTile2                                   TileType = 11
 	PillarsColumnsAndStandaloneObjects             TileType = 12
-	Shadows                                        TileType = 13
-	Trees                                          TileType = 14
-	Roofs                                          TileType = 15
+	Shadow                                         TileType = 13
+	Tree                                           TileType = 14
+	Roof                                           TileType = 15
 	LowerWallsEquivalentToLeftWall                 TileType = 16
 	LowerWallsEquivalentToRightWall                TileType = 17
 	LowerWallsEquivalentToRightLeftNorthCornerWall TileType = 18
