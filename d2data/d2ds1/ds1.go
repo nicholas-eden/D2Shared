@@ -147,7 +147,7 @@ func LoadDS1(path string, fileProvider d2interface.FileProvider) DS1 {
 							c = dirLookup[c]
 						}
 					}
-					ds1.Tiles[y][x].Walls[wallIndex].Type = byte(c)
+					ds1.Tiles[y][x].Walls[wallIndex].Type = d2enum.TileType(c)
 					ds1.Tiles[y][x].Walls[wallIndex].Zero = byte((dw & 0xFFFFFF00) >> 8)
 				case d2enum.LayerStreamFloor1:
 					fallthrough
