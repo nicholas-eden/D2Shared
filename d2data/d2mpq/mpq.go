@@ -12,8 +12,6 @@ import (
 	"runtime"
 	"strings"
 	"sync"
-
-	"github.com/OpenDiablo2/D2Shared/d2common/d2resource"
 )
 
 // MPQ represents an MPQ archive
@@ -295,9 +293,6 @@ func (v MPQ) FileExists(fileName string) bool {
 
 // ReadFile reads a file from the MPQ and returns a memory stream
 func (v MPQ) ReadFile(fileName string) ([]byte, error) {
-	fileName = strings.ReplaceAll(fileName, "{LANG}", d2resource.LanguageCode)
-	fileName = strings.ToLower(fileName)
-	fileName = strings.ReplaceAll(fileName, `/`, "\\")
 	cached := v.fileCache[fileName]
 	if cached != nil {
 		return cached, nil
