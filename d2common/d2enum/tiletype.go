@@ -24,3 +24,21 @@ const (
 	LowerWallsEquivalentToRightLeftNorthCornerWall TileType = 18
 	LowerWallsEquivalentToSouthCornerwall          TileType = 19
 )
+
+func (tile TileType) LowerWall() bool {
+	switch tile {
+	case 16, 17, 18, 19:
+		return true
+	default:
+		return false
+	}
+}
+
+func (tile TileType) UpperWall() bool {
+	switch tile {
+	case 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 14:
+		return true
+	default:
+		return false
+	}
+}
