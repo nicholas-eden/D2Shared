@@ -98,19 +98,19 @@ const (
 
 	// --- Fonts ---
 
-	Font6          = "/data/local/font/latin/font6"
-	Font8          = "/data/local/font/latin/font8"
-	Font16         = "/data/local/font/latin/font16"
-	Font24         = "/data/local/font/latin/font24"
-	Font30         = "/data/local/font/latin/font30"
-	Font42         = "/data/local/font/latin/font42"
-	FontFormal12   = "/data/local/font/latin/fontformal12"
-	FontFormal11   = "/data/local/font/latin/fontformal11"
-	FontFormal10   = "/data/local/font/latin/fontformal10"
-	FontExocet10   = "/data/local/font/latin/fontexocet10"
-	FontExocet8    = "/data/local/font/latin/fontexocet8"
-	FontSucker     = "/data/local/font/latin/ReallyTheLastSucker"
-	FontRediculous = "/data/local/font/latin/fontridiculous"
+	Font6          = "/data/local/font/{LANG_FONT}/font6"
+	Font8          = "/data/local/font/{LANG_FONT}/font8"
+	Font16         = "/data/local/font/{LANG_FONT}/font16"
+	Font24         = "/data/local/font/{LANG_FONT}/font24"
+	Font30         = "/data/local/font/{LANG_FONT}/font30"
+	Font42         = "/data/local/font/{LANG_FONT}/font42"
+	FontFormal12   = "/data/local/font/{LANG_FONT}/fontformal12"
+	FontFormal11   = "/data/local/font/{LANG_FONT}/fontformal11"
+	FontFormal10   = "/data/local/font/{LANG_FONT}/fontformal10"
+	FontExocet10   = "/data/local/font/{LANG_FONT}/fontexocet10"
+	FontExocet8    = "/data/local/font/{LANG_FONT}/fontexocet8"
+	FontSucker     = "/data/local/font/{LANG_FONT}/ReallyTheLastSucker"
+	FontRediculous = "/data/local/font/{LANG_FONT}/fontridiculous"
 
 	// --- UI ---
 
