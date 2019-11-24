@@ -8,5 +8,6 @@ type FloorShadowRecord struct {
 	Unknown2    byte
 	Hidden      bool
 	RandomIndex byte
+	Animated    bool
 	YAdjust     int
 }

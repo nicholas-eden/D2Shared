@@ -3,7 +3,7 @@ package d2dt1
 type Tile struct {
 	Direction          int32
 	RoofHeight         int16
-	MaterialFlags      int16
+	MaterialFlags      MaterialFlags
 	Height             int32
 	Width              int32
 	Type               int32
